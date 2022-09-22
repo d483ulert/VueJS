@@ -1,25 +1,40 @@
 
 
+
 <template>
+  <div>
+     <h1>지성</h1>
+    <jisung :title="title"></jisung>
 
-
+  </div>
 </template>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+<script>
+import jisung from '@/component/jisung.vue';
 
-Vue.component()
+ export default {
+   components: {
+     jisung
+   },
 
-const app = new Vue({
-  el: '#app',
-  data: {
-    name: '코지'
-  },
-  methods: {
-    changeText(){
-      this.name='코지';
+  data(){
+    return{
+      name:'지성'
     }
-  }
-})
+  },
 
+  data2(){
+     return {
+       title: 5
+     }
+  }
+ }
 </script>
 
+
+<style scoped>
+h1{
+  font-size: 20px;
+}
+
+</style>
