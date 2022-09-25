@@ -1,13 +1,15 @@
 
 <template>
-  <div>
-      <h1> this is gg</h1>
-        <form action="">
-        <label for="">name</label>
-        <input type="text" v-model="name">
-        <br>
-        <button>submit</button>
-    </form>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <jisung>
+      <template #header="{ shop }">
+        <p>header1 {{ shop }}</p>
+      </template>
+      <template #default>
+        hello
+      </template>
+    </jisung>
   </div>
 </template>
 
