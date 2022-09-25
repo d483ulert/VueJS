@@ -10,7 +10,13 @@
         @keyup.enter="addTodo">
 
     <hr>
-    <Todo v-for="todo in todos" :key="todo.id" :todo="todo"/>
+    <Todo
+        v-for="todo in todos"
+        :key="todo.id"
+        :todo="todo"
+        @toggle-checkbox="toggleCheckBox"
+        @click-delete ="deleteTOdo"
+    />
   </div>
 </template>
 
@@ -30,6 +36,12 @@ export default {
     }
   },
   methods: {
+    deleteTodo(id) {
+        const index = this.todos.findIndex(todo =>{
+          return todo.id ===id;
+        });
+        this.todos.splice(index,1);
+    },
     addTodo(e) {
       this.todos.push({
         id: Math.random(),
@@ -37,6 +49,12 @@ export default {
         checked: false
       });
       this.todoText = '';
+    },
+    toggleCheckBox({id, checked}){
+      const index = this.todos.findIndex(todo =>{
+        return todo.id === id;
+      });
+      this.todos[index].checked =checked;
     }
   }
 }
