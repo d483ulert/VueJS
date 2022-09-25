@@ -15,6 +15,34 @@
 
 <script>
 export default {
+  components: {
+    InputField
+  },
+  data(){
+    return{
+      name: 'jisung'
+    }
+  },
+  beforeCreate() {
+    console.log()
+
+  },
+  created() {
+
+  },
+  beforeMount() {
+
+  },
+  mounted() {
+
+  },
+  beforeUpdate() {
+
+  },
+  updated() {
+  },
+
+
 
 }
 
