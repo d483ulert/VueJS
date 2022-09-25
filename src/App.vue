@@ -1,40 +1,49 @@
 
-
-
 <template>
-  <div>
-     <h1>지성</h1>
-    <jisung :title="title"></jisung>
+  <div id="app" class="container">
+    <h1 class="text-center">Todo App</h1>
+    <input
+        v-model="todoText"
+        type="text"
+        class="w-100 p-2"
+        placeholder="Type todo"
+        @keyup.enter="addTodo">
 
+    <hr>
+    <Todo v-for="todo in todos" :key="todo.id" :todo="todo"/>
   </div>
 </template>
 
 <script>
-import jisung from '@/component/jisung.vue';
-
- export default {
-   components: {
-     jisung
-   },
-
+import TodoVue from "@/components/todoVue";
+export default {
+  components: {
+    Todo
+  },
   data(){
-    return{
-      name:'지성'
+    return {
+      todoText: '',
+      todos: [
+        {id: 1, text: 'buy a car', checked: false},
+        {id: 2, text: 'buy a game', checked: false}
+      ]
     }
   },
-
-  data2(){
-     return {
-       title: 5
-     }
+  methods: {
+    addTodo(e) {
+      this.todos.push({
+        id: Math.random(),
+        text: e.target.value(),
+        checked: false
+      });
+      this.todoText = '';
+    }
   }
- }
-</script>
-
-
-<style scoped>
-h1{
-  font-size: 20px;
 }
 
+</script>
+
+<style>
+
 </style>
+
