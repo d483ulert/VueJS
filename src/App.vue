@@ -10,21 +10,15 @@
         @keyup.enter="addTodo">
 
     <hr>
-    <Todo
-        v-for="todo in todos"
-        :key="todo.id"
-        :todo="todo"
-        @toggle-checkbox="toggleCheckBox"
-        @click-delete ="deleteTOdo"
-    />
+  <TodoList :todos="todos"/>
   </div>
 </template>
 
 <script>
-import TodoVue from "@/components/todoVue";
+import TodoList from "@/components/TodoList";
 export default {
   components: {
-    Todo
+    TodoList
   },
   data(){
     return {
