@@ -24,13 +24,12 @@ export default new Vuex.Store({
                 return todo.id ===id;
             })
             state.todos[index].checked =checked;
-
         },
         DELETE_TOD(state,todo_id) {
             const index = state.todos.findIndex( todo =>{
                return todo.id === todo_id;
             });
-            state.todos.splice(index,1)
+            state.todos.splice(index,1);
 
         }
     },
