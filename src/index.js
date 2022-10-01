@@ -8,9 +8,13 @@ export default new Vuex.Store({
         todos: [
             { id: 1, text: 'buy a car', checked: false},
             { id: 2, text: 'pay a car', checked: false},
-        ]
+        ],
+        users: []
     },
     mutations: {
+        SET_USERS(state,users){
+            state.users=users;
+        },
         //데이터를 실질적으로 바꾸는곳
         ADD_TODO(state,value) {
             state.todos.push({
@@ -34,7 +38,15 @@ export default new Vuex.Store({
         }
     },
     actions: {
+        getUsers() {
+
+        },
         //함수 및 비동기적 행위
+        addTodo({ commit },payload) {
+            setTimeout()
+
+            commit('ADD_TODO', value);
+        }
     },
     getters: { //computed
     }
