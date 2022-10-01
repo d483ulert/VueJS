@@ -11,22 +11,18 @@
 </template>
 
 <script>
-import axios from 'axios';
-
   export default {
-    data() {
-      return{
-        user: []
-      }
-    },
     created() {
       this.getUsers();
     },
+    computed: {
+      users() {
+              return this.$store.state.users();
+      }
+    },
     methods: {
-      getUsers(){
-        axios.get('www.sss.sss').then(res=>{
-          this.user=res.data;
-        });
+     getUsers(){
+        this.$store.dispatch('getUsers');
       }
     }
   }

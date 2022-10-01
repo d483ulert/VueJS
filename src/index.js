@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -12,9 +13,6 @@ export default new Vuex.Store({
         users: []
     },
     mutations: {
-        SET_USERS(state,users){
-            state.users=users;
-        },
         //데이터를 실질적으로 바꾸는곳
         ADD_TODO(state,value) {
             state.todos.push({
@@ -38,8 +36,10 @@ export default new Vuex.Store({
         }
     },
     actions: {
-        getUsers() {
-
+        getUsers({ commit }) {
+            axios.get('www.sss.sss').then (res => {
+                commit('SET_USER',res.data);
+            });
         },
         //함수 및 비동기적 행위
         addTodo({ commit },payload) {
