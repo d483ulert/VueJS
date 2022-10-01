@@ -14,7 +14,7 @@ export default new Vuex.Store({
         //데이터를 실질적으로 바꾸는곳
         ADD_TODO(state,value) {
             state.todos.push({
-                id: Math.random(),
+                id: Math.random(),ff
                 text: value,
                 checked: false
             });
