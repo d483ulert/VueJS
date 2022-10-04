@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      title: 5
+      title: 3
     }
   }
 
