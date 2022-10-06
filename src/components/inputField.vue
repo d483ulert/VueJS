@@ -21,7 +21,7 @@ export default {
   methods: {
     updateName(e) {
       console.log(e.target.value);
-      this.$emit('update-name',e.target.value);
+      this.$emit('update-name', e.target.value);
     }
   }
 }
