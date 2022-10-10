@@ -11,7 +11,6 @@ import CustomLoginButton from "../common/CustomLoginButton.vue";
 export default {
   name: "NaverOauth",
   components: {
-    CustomLoginButton
   },
   methods: {
     naver(){
