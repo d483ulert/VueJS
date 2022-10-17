@@ -16,6 +16,10 @@ export default {
     name: {
       type: String,
       required: true,
+    },
+    disabled: {
+      type: Boolean,
+      required: true,
     }
   },
   methods: {
