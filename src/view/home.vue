@@ -13,10 +13,11 @@
 
 <script>
 import inputField from  "@/components/inputField";
-
+import Vue from "vue";
 export default {
   components: {
-    inputField
+    inputField,
+    Vue
   },
   data() {
     return {
