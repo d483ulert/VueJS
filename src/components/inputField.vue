@@ -22,6 +22,14 @@ export default {
       required: true,
     }
   },
+  data(){
+    return{
+
+    }
+  },
+  crated(){
+
+  },
   methods: {
     updateName(e) {
       console.log(e.target.value);
