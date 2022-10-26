@@ -14,16 +14,22 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    content: {
+      type: String,
+      required: true
     }
   },
   data() {
     return {
-      name: 'jisung'
+      name: 'jisung',
+      content: ""
     }
   },
   methods: {
     upadateName() {
       this.name = 'jisung';
+
     }
   }
 
